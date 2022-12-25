@@ -5,8 +5,5 @@ app = Flask(__name__)
 @app.route('/')
 
 def hello():
-    return 'Hello world Flask'
+    return 'Hello world Flask test'
 
-@app.route('/nitesh')
-def hello_world():
-    return 'Hello, ' + request.args.get('name')

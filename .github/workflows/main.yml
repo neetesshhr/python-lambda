@@ -8,17 +8,24 @@ on:
 
 jobs:
 
-  deploy_source:
+  deploy:
     name: deploy lambda from source
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - name: checkout source code
         uses: actions/checkout@v1
-      - name: default deploy
-        uses: appleboy/lambda-action@master
+      - name: Use node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
         with:
+          node-version: ${{matrix.node-version}}
+      - name: Serverless deploy
+        uses: appleboy/github-action@master
+        with:
+          args: deploy
+        env:
           aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
           aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws_region: ${{secrets.AWS_REGION}}
-          function_name: lambda-cd
-          source: app.py

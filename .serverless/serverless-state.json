@@ -6,7 +6,7 @@
     },
     "provider": {
       "name": "aws",
-      "runtime": "python3.10",
+      "runtime": "python3.9",
       "stage": "dev",
       "region": "us-west-2",
       "versionFunctions": true,
@@ -173,10 +173,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-flask/dev/1671942984687-2022-12-25T04:36:24.687Z/serverless-flask.zip"
+                "S3Key": "serverless/serverless-flask/dev/1671947176298-2022-12-25T05:46:16.298Z/serverless-flask.zip"
               },
               "Handler": "wsgi_handler.handler",
-              "Runtime": "python3.10",
+              "Runtime": "python3.9",
               "FunctionName": "serverless-flask-dev-app",
               "MemorySize": 1024,
               "Timeout": 6,
@@ -191,7 +191,7 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionDlRjVqNEJADsGTgz7dyJxnn9UvXxbOUGOIcP1cSeI": {
+          "AppLambdaVersionFS6ttNBxjVYqwR3TUWFycd2GjJDuQ3loWufuZCNoTY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
@@ -323,7 +323,7 @@
               "AppLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1671942973469": {
+          "ApiGatewayDeployment1671947170711": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -386,7 +386,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionDlRjVqNEJADsGTgz7dyJxnn9UvXxbOUGOIcP1cSeI"
+              "Ref": "AppLambdaVersionFS6ttNBxjVYqwR3TUWFycd2GjJDuQ3loWufuZCNoTY"
             },
             "Export": {
               "Name": "sls-serverless-flask-dev-AppLambdaFunctionQualifiedArn"
@@ -533,9 +533,9 @@
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "python3.10",
+        "runtime": "python3.9",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionDlRjVqNEJADsGTgz7dyJxnn9UvXxbOUGOIcP1cSeI"
+        "versionLogicalId": "AppLambdaVersionFS6ttNBxjVYqwR3TUWFycd2GjJDuQ3loWufuZCNoTY"
       }
     },
     "configValidationMode": "warn",
@@ -560,7 +560,7 @@
     "artifact": "/home/root1/Documents/python-lambda/.serverless/serverless-flask.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-flask/dev/1671942984687-2022-12-25T04:36:24.687Z",
+    "artifactDirectoryName": "serverless/serverless-flask/dev/1671947176298-2022-12-25T05:46:16.298Z",
     "artifact": "serverless-flask.zip"
   }
 }
