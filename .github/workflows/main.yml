@@ -21,6 +21,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{matrix.node-version}}
+      - name: configure serverless
+        uses: serverless/github-action@master
+        with: 
+          args: config credentials --provider aws --key ${{secrets.AWS_ACCESS_KEY_ID}} --secret ${{secrets.AWS_SECRET_ACCESS_KEY}} -- profile mainprofile --overwrite
+     
       - name: Serverless plugin install
         uses: serverless/github-action@master
         with:
@@ -31,6 +36,8 @@ jobs:
         uses: serverless/github-action@master
         with:
           args: deploy --aws-profile devProfile
+      
+
 
           
       - name: serverless doctor 
