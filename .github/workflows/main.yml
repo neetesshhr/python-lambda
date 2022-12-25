@@ -35,7 +35,7 @@ jobs:
       - name: serverless deploy
         uses: serverless/github-action@master
         with:
-          args: deploy --aws-profile devProfile
+          args: deploy
       
 
 
