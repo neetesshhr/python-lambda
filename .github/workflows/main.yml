@@ -25,6 +25,11 @@ jobs:
         uses: serverless/github-action@master
         with:
           args:  plugin install -n serverless-python-requirements
+      - name: serverless doctor 
+        uses: serverless/github-action@master
+        with:
+          args: doctor
+
       - name: serverless deploy
         uses: serverless/github-action@master
         with:
