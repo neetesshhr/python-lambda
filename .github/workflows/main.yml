@@ -25,15 +25,17 @@ jobs:
         uses: serverless/github-action@master
         with:
           args:  plugin install -n serverless-python-requirements
-      - name: serverless doctor 
-        uses: serverless/github-action@master
-        with:
-          args: doctor
+
 
       - name: serverless deploy
         uses: serverless/github-action@master
         with:
           args: deploy
+          
+      - name: serverless doctor 
+        uses: serverless/github-action@master
+        with:
+          args: doctor
         env:
           aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
           aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
