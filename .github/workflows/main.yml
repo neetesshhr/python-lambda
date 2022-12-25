@@ -41,11 +41,7 @@ jobs:
         with:
           args: deploy 
           
-          args: deploy
-      
-
-
-          
+   
       - name: serverless doctor 
         uses: serverless/github-action@master
         with:
